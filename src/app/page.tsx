@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import FileUploadForm from "@/components/FileUploadForm";
 import ModelSelect from "@/components/ModelSelect";
 import DataTable from "@/components/DataTable";
@@ -9,11 +9,11 @@ import { Button } from "@/components/ui/button";
 import * as XLSX from 'xlsx';
 
 export default function Home() {
-  const [selectedFile, setSelectedFile] = React.useState<File | null>(null);
-  const [selectedModel, setSelectedModel] = React.useState<string>("gpt-4o-mini high");
-  const [extractedData, setExtractedData] = React.useState<any[]>([]);
-  const [isLoading, setIsLoading] = React.useState(false);
-  const [error, setError] = React.useState<string | null>(null);
+  const [selectedFile, setSelectedFile] = useState<File | null>(null);
+  const [selectedModel, setSelectedModel] = useState<string>("gpt-4o-mini high");
+  const [extractedData, setExtractedData] = useState<any[]>([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleFileUpload = (file: File) => {
