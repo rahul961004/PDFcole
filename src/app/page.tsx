@@ -66,7 +66,6 @@ export default function Home() {
       console.error("Extraction error:", error);
       const errorMessage = error.message || "An unexpected error occurred.";
       setError(errorMessage);
-      });
     } finally {
       setIsLoading(false); // Stop loading regardless of success or failure
     }
